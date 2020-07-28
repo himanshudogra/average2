@@ -7,12 +7,12 @@ import (
 	"strconv"
 )
 
-func multiply(numbers ...int) int {
-	var multiply int = 1
+func average(numbers ...int) float64 {
+	var sum int = 0
 	for _, number := range numbers {
-		multiply *= number
+		sum += number
 	}
-	return multiply
+	return float64(sum) / float64(len(numbers))
 }
 
 func main() {
@@ -27,5 +27,5 @@ func main() {
 		}
 		numbers = append(numbers, number)
 	}
-	fmt.Printf("Multiply %d\n", multiply(numbers...))
+	fmt.Printf("Average: %f\n", average(numbers...))
 }
